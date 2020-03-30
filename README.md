@@ -1,4 +1,4 @@
-Programme fait par : Gabriel PONS / Lilia Michau 
+> Programme fait par : Gabriel PONS / Lilia Michau
 
 **- Quel était votre projet initial ?**
 Notre but était de reproduire la roulette dans un casino où l’on pouvait parier une mise choisie parmi un somme d’argent définie.
