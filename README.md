@@ -1,4 +1,4 @@
-> Programme fait par : Gabriel PONS / Lilia Michau
+> Programme fait par : Gabriel PONS / Lilia MICHAUT
 
 **- Quel était votre projet initial ?**
 
