@@ -13,9 +13,13 @@ Nous avons réalisé un programme qui nous donne une somme d’argent définie l
 **-Le programme fonctionne-t-il ? L’avez-vous éventuellement enrichi ?**
 
 Oui, le programme fonctionne et nous l’avons enrichi avec :
+
 -Un système qui donne le nombre d’argent restant à chaque fin de paris.
+
 -Un système pour prévenir les éventuelles tricheries ou tentatives de bugs en mettant un nombre supérieur à ce qui est demandé lors du pari ou de la mise.
+
 -Un système qui permet de terminer la partie si le joueur ne possède plus d’argents.
+
 -Un système qui propose au joueur de quitter ou non le casino à chaque fin de paris s’il souhaite s’arrêté.
 
 
