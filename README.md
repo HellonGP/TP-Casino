@@ -1,66 +1,19 @@
-# Projet-TP-Python
-Projet TP (Code_TXT) : 
+Programme fait par : Gabriel PONS / Lilia Michau 
 
-from random import randrange
-from math import ceil
+**- Quel était votre projet initial ?**
+Notre but était de reproduire la roulette dans un casino où l’on pouvait parier une mise choisie parmi un somme d’argent définie.
 
-argent = 1000
-continuer_partie = True
+**-Qu’avez-vous réalisé ?**
+Nous avons réalisé un programme qui nous donne une somme d’argent définie lorsqu’on le lance (ici 1000$), puis il nous propose de miser sur un nombre entre 0 et 49 (comme dans une roulette classique) puis de choisir le montant de son pari. Si l’on tombe sur la bonne couleur l’on gagne notre mise plus 0.5 fois notre mise et si l’on a parié sur le numéro gagnant alors l’on gagne 3 fois notre mise. Si la couleur est mauvaise et que vous n’êtes pas tombé sur le numéro gagnant alors vous perdez votre mise.
 
-print("Tu as", argent, "$")
+**-Le programme fonctionne-t-il ? L’avez-vous éventuellement enrichi ?**
+Oui, le programme fonctionne et nous l’avons enrichi avec :
+-Un système qui donne le nombre d’argent restant à chaque fin de paris.
+-Un système pour prévenir les éventuelles tricheries ou tentatives de bugs en mettant un nombre supérieur à ce qui est demandé lors du pari ou de la mise.
+-Un système qui permet de terminer la partie si le joueur ne possède plus d’argents.
+-Un système qui propose au joueur de quitter ou non le casino à chaque fin de paris s’il souhaite s’arrêté.
 
-while continuer_partie:
-    nombre_mise = -1
-    while nombre_mise < 0 or nombre_mise > 49:
-        print("Choisir entre")
-        nombre_mise = input("0 et 49 : ")
-        try:
-            nombre_mise = int(nombre_mise)
-        except ValueError:
-            print("Tu n'as rien saisi")
-            nombre_mise = -1
-            continue
-        if nombre_mise < 0:
-            print("Nombre negatif")
-        if nombre_mise > 49:
-            print("Nombre superieur a 49")
-
-    mise = 0
-    while mise <= 0 or mise > argent:
-        mise = input("Montant mise : ")
-        try:
-            mise = int(mise)
-        except ValueError:
-            print("Tu n'as rien saisi")
-            mise = -1
-            continue
-        if mise <= 0:
-            print("Mise negative / nulle")
-        if mise > argent:
-            print("Tu n'as rien saisi")
-
-    numero_gagnant = randrange(50)
-    print("La roulette tourne...", numero_gagnant)
-
-    if numero_gagnant == nombre_mise:
-        print("Bravo ! Vous gagnez", mise * 3, "$ !")
-        argent += mise * 3
-    elif numero_gagnant % 2 == nombre_mise % 2:
-        mise = ceil(mise * 0.5)
-        print("Bonne couleur ! Vous gagnez", mise, "$")
-        argent += mise
-    else:
-        print("Perdu...")
-        argent -= mise
-
-    if argent <= 0:
-        print("Vous etes ruine !")
-        continuer_partie = False
-    else:
-        print("Tu as a present", argent, "$")
-        print("Quitter le Casino ?")
-        quitter = input("(o/n) ")
-        if quitter == "o" or quitter == "O":
-            print("Aurevoir")
-            continuer_partie = False
-            break
+**-Quelles difficultés avez-vous rencontré ?**
+Nous avons rencontré deux difficultés majeures.
+La première était lors de la création du système qui permettait de proposer au joueur de quitter ou non le casino car nous n’avions aucune idée de comment faire en sorte que le programme se ferme si le joueur souhaite quitter le casino (erreur remédiée en mettant une grande partie du programme dans une boucle qui se ferme si le joueur quitte le casino, se qui entraîne la fin du programme).
+La deuxième difficulté était que l’on ne peut pas afficher un long texte sur la calculatrice, l’on a donc étés obligés de raccourcir le texte tout en restant compréhensibles (ex : « Vous avez misez sur la bonne couleur ! Vous gagnez ! »  était trop grand pour être afficher sur la calculatrice, l’on a donc été obligés de raccourcir le texte en : « Bonne couleur ! Vous gagnez ! »
